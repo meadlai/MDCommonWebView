@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0;" />
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="email=no" />
+        <link rel="stylesheet" href="css/ui.css" type="text/css" />
+        
+        <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.1.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(function(){
+              $("#list_message li:not(.more_item)")
+              .bind('click',function(e){
+                    var from = $(this).attr("from");
+                    var text = $(this).text();
+                    invokeAction('doRedirect',{'path': 'html','fileName':'tab2_message_detail',
+                                 'arg':'from='+from+'&text='+text,'viewTitle':'消息详细'});
+                    e.preventDefault();
+                    });
+              });
+            function doRightCallBack(){
+                invokeAction('doRedirect',
+                             {'path': 'html',
+                             'fileName':'tab2_message_create',
+                             'arg':'user=mead',
+                             'viewTitle':'新建消息',
+                             'rightButtonTitle':'保存草稿',
+                             'rightButtonAction':'saveDraft'
+                             });
+            }
+        </script>
+    </head>
+    <body>
+        <h3>点击查看消息</h3>
+        <hr>
+        <ul id="list_message">
+            <li from='张三'>放假通知--来自:张三</li>
+            <li from='王五'>流程待批--来自:王五</li>
+            <li class='more_item'>更多</li>
+        </ul>
+    </body>
+</html>

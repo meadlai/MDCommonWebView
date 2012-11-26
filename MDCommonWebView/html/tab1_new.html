@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0;" />
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="email=no" />
+        <link rel="stylesheet" href="css/ui.css" type="text/css" />
+        <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.1.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(function(){
+              $("#list_news li:not(.more_item)")
+              .bind('click',function(e){
+                    var text = $(this).text();
+                    invokeAction('doRedirect',{'path': 'html','fileName':'tab1_new_detail',
+                                 'arg':'text='+text,'viewTitle':'详细新闻'});
+                    e.preventDefault();
+                    });
+              });
+            //
+            function doRightCallBack(){
+                alert('Refreshing now');
+            }
+            //
+            function doLeftCallBack(){
+                invokeAction('doSearch',{'path': 'html','fileName':'search_view','keyword':'重演理论','placehold':'placehold请输入...','callback':'doSearchAction'});
+            }
+            </script>
+    </head>
+    <body>
+        <h3>点击新闻查看</h3>
+        <hr>
+        <ul id='list_news'>
+            <li>C</li>
+            <li>Java</li>
+            <li>Objective C</li>
+            <li>C++</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>C#</li>
+            <li>Lisp</li>
+            <li>PL/SQL</li>
+            <li class='more_item'>Load More</li>
+        </ul>
+    </body>
+</html>

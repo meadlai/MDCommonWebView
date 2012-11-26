@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0;" />
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="email=no" />
+        <link rel="stylesheet" href="css/ui.css" type="text/css" />
+        
+        <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.1.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(function(){
+              var user = request.parameters['user'];
+              $('#user').html(user);
+              $('#btn_submit')
+              .bind('click',function(e){
+                    alert('正在提交...');
+                    invokeAction('goBack',{'root':'true'});
+                    e.preventDefault();
+                    });
+            });
+            
+            function saveDraft(){
+                alert('正在保存草稿...');
+            }
+            
+        </script>
+    </head>
+    <body>
+        <h3>接收人:<span id="user"></span></h3>
+        <hr>
+        <div>
+            <textarea id="msg_content" cols=40 rows=10></textarea>
+            <br/>
+            <input id="btn_submit" type="button" value="提交"/>
+        </div>
+    </body>
+</html>

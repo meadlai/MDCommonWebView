@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0;" />
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="email=no" />
+        <link rel="stylesheet" href="css/ui.css" type="text/css" />
+        
+        <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.1.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(function(){
+              var user = request.parameters['from'];
+              var text = request.parameters['text'];
+              $('#user').html(user);
+              $('#text').html(text);
+            });
+        </script>
+    </head>
+    <body>
+        <h3><span id="user"></span></h3>
+        <hr>
+        <div id="text"> </div>
+    </body>
+</html>
