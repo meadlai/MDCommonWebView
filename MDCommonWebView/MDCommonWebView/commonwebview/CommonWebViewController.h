@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CommonWebViewController : UIViewController{
-    //TODO:将这些property包装成对象,每个方法都可以取.
     NSString* _path;
     NSString* _fileName;
     NSString* _url;
@@ -24,7 +23,6 @@
     NSString* _rightButtonAction;
     //inner
     UIWebView* _webview;
-    //
 }
 
 @property(nonatomic,retain) NSString* path;
@@ -55,7 +53,7 @@
 -(void)doSearch:(NSString*)data;
 //打开url,调用其它app
 -(void)doOpen:(NSString*)data;
-//调试,计时器
+//调试性能,计时器
 -(void)time:(NSString*)data;
 
 @end
