@@ -41,7 +41,7 @@
 //inner
 @property(nonatomic,retain) UIWebView* webview;
 
-//负责页面跳转
+//新建一个CommonWebViewController相当于HTML的<a>标签打开一个新页面
 -(void)doRedirect:(NSString*)data;
 //绑定右上角js回调
 -(void)doRightCallBack;
