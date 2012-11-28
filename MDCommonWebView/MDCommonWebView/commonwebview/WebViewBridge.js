@@ -6,7 +6,7 @@
     bridge.setAttribute("height", "0px");
     bridge.setAttribute("width", "0px");
     bridge.setAttribute("frameborder", "0");
-    bridge.body.appendChild(iFrame);
+    document.body.appendChild(bridge);
     bridge.parentNode.removeChild(bridge);
     bridge = null;
 }
